@@ -40,7 +40,7 @@ exports.loginHandler = function (req, res, next) {
       if (users.length > 0) {
         const redirectPage = req.body.redirectPage
         const session = req.session
-        const username = req.body.username
+        const username = req.body.username.toString()
         return adminLoginSuccess(redirectPage, session, username, res)
       } else {
         return res.status(401).send()
